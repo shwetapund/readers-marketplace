@@ -1,15 +1,16 @@
 import {Regi} from "./../model/Registration.js";
 
 const signupApi = async (req,res)=>{
-    const {name, email, mobile, password} = req.body;
+    const {name, email, mobile, password,role} = req.body;
 
     const signup = new Regi({
+        role,
         name,
         email,
         password,
         mobile
     })
-
+   
     const savedUser = await signup.save();
     
     res.json({
@@ -18,6 +19,7 @@ const signupApi = async (req,res)=>{
         message:"Signup Successfully"
     })
 }
+
 
 const loginApi = async (req,res)=>{
     const {email,password} = req.body;

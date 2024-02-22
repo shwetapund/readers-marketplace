@@ -23,6 +23,14 @@ app.post('/api/v1/signup',signupApi)
 //login
 app.post('/api/v1/login',loginApi)
 
+app.get('/admin', (req, res) => {
+    if (req.user.role === 'admin') {
+      res.send('Welcome Admin!');
+    } else {
+      res.status(403).send('Permission Denied.');
+    }
+  });
+
 app.listen(PORT, ()=>{
     console.log(`server is running on ${PORT}`)
 })
