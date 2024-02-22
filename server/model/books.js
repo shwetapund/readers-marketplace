@@ -14,11 +14,11 @@ const bookSchema = new Schema({
         required:true
     },
     genre:{
-        type:true,
+        type:String,
         required:true
     },
     publishDate:{
-        type:true,
+        type:String,
         required:true
     },
     price:{
@@ -34,6 +34,6 @@ const bookSchema = new Schema({
     timestamps:true
 })
 
-const Books = model('bookSchema',Books);
+const Book = model('Book',bookSchema);
 
-export {Books}
+export {Book}
