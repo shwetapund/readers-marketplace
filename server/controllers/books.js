@@ -49,4 +49,15 @@ const updateBooksApi = async (req, res) => {
   });
 };
 
-export { bookApi, updateBooksApi };
+const getBooksApi = async (req,res)=>{
+    const {_id} = req.params;
+    const findBook = await Book.findOne({_id:_id})
+
+    res.json({
+        success:true,
+        data:findBook,
+        message:"successfully fetch book"
+    })
+}
+
+export { bookApi, updateBooksApi, getBooksApi};
