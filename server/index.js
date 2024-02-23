@@ -3,7 +3,7 @@ import mongoose from "mongoose";
 import dotenv from "dotenv";
 dotenv.config();
 import {signupApi, loginApi} from "./controllers/registration.js";
-import {bookApi, updateBooksApi, getBooksApi} from "./controllers/books.js";
+import {bookApi, updateBooksApi, getBooksApi, searchBooks} from "./controllers/books.js";
 
 const app = express();
 app.use(express.json());
@@ -22,15 +22,10 @@ app.post('/api/v1/signup',signupApi) //signup
 app.post('/api/v1/login',loginApi) //login
 app.post('/api/v1/books',bookApi) //books added 
 app.put('/api/v1/books/:_id',updateBooksApi) //books update
-app.get('/api/v1/books/:_id',getBooksApi)
+app.get('/api/v1/books/:_id',getBooksApi) //bookd fetch
+app.get('/api/v1/booksSearch', searchBooks) //search books by title
 
-// app.get('/admin', (req, res) => {
-//     if (req.user.role === 'admin') {
-//       res.send('Welcome Admin!');
-//     } else {
-//       res.status(403).send('Permission Denied.');
-//     }
-//   });
+
 
 app.listen(PORT, ()=>{
     console.log(`server is running on ${PORT}`)

@@ -60,4 +60,15 @@ const getBooksApi = async (req,res)=>{
     })
 }
 
-export { bookApi, updateBooksApi, getBooksApi};
+const searchBooks = async (req,res)=>{
+    const { que } = req.query;
+
+    const searchBook = await Book.find({ title: { $regex: que, $options: 'i' } });
+
+    res.json({
+        success:true,
+        data:searchBook,
+        message:"successfully search books"
+    })
+}
+export { bookApi, updateBooksApi, getBooksApi, searchBooks};
