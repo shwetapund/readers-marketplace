@@ -63,12 +63,29 @@ const getBooksApi = async (req,res)=>{
 const searchBooks = async (req,res)=>{
     const { que } = req.query;
 
-    const searchBook = await Book.find({ title: { $regex: que, $options: 'i' } });
-
+    try{
+    const searchBook = await Book.find({
+        $or: [
+            { title: { $regex: que, $options: 'i' } },
+            { cover: { $regex: que, $options: 'i'} },
+            { tags: { $regex: que, $options: 'i'} },
+            { price: { $regex: que, $options: 'i'} },
+            { description: { $regex: que, $options: 'i'} },
+            { publishDate: { $regex: que, $options: 'i'} },
+            { genre: { $regex: que, $options: 'i'} },
+        ]
+    })
     res.json({
         success:true,
         data:searchBook,
         message:"successfully search books"
     })
+}
+catch(err){
+    res.json({
+        success:false,
+        message:err.message
+    })
+}
 }
 export { bookApi, updateBooksApi, getBooksApi, searchBooks};
