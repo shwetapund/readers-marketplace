@@ -6,6 +6,8 @@ import Home from "./views/Home/Home";
 import About from "./views/About/About";
 import Signup from "./views/Signup/Signup";
 import Login from "./views/Login/Login";
+// import 'bootstrap/dist/css/bootstrap.min.css';
+// import 'bootstrap/dist/js/bootstrap.bundle.min';
 
 const router = createBrowserRouter([
   {
