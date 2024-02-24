@@ -1,6 +1,7 @@
 import React, {useState, useEffect} from 'react';
 import Navbar from '../../components/Navbar/Navbar';
 import './Home.css';
+import homeImg from "./../../assets/home-img.jpg";
 
 function Home() 
 {
@@ -8,7 +9,10 @@ function Home()
   return (
     <>
     <Navbar/>
-    <h1>Home</h1>
+    <div className='homepage-img'>
+        <h1 className='text-center title'>Books Gallary</h1>
+      </div>
+
     </>
   )
 }

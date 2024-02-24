@@ -1,13 +1,21 @@
 .homepage-img{
-    background-image: url('./../../assets/homepage-img.jpg');
+   background-image: url('./../../assets/home-3.avif');
    background-position: center;
    background-repeat: no-repeat;
-    background-size: cover;
+   background-size: cover;
    height: 570px;
+   display: flex;
+   justify-content: space-around;
 }
 .cards-container{
     display: flex;
     justify-content: space-evenly;
     flex-wrap: wrap;
     margin-top: 20px;
+}
+.title{
+    color: rgb(252, 64, 124);
+    position: relative;
+    top:110px;
+    font-size: 80px !important;
 }
