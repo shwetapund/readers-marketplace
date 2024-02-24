@@ -4,6 +4,8 @@ import dotenv from "dotenv";
 dotenv.config();
 import {signupApi, loginApi} from "./controllers/registration.js";
 import {bookApi, updateBooksApi, getBooksApi, searchBooks} from "./controllers/books.js";
+import path from 'path';
+const __dirname = path.resolve();
 
 const app = express();
 app.use(express.json());
@@ -25,7 +27,13 @@ app.put('/api/v1/books/:_id',updateBooksApi) //books update
 app.get('/api/v1/books/:_id',getBooksApi) //bookd fetch
 app.get('/api/v1/booksSearch', searchBooks) //search books by title
 
-
+if (process.env.NODE_ENV === 'production') {
+    app.use(express.static(path.join(__dirname, '..', 'client', 'build')));
+  
+    app.get('*', (req, res) => {
+      res.sendFile(path.join(__dirname, '..', 'client', 'build', 'index.html'))
+    });
+  }
 
 app.listen(PORT, ()=>{
     console.log(`server is running on ${PORT}`)

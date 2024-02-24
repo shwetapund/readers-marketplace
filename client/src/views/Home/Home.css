@@ -1,0 +1,13 @@
+.homepage-img{
+    background-image: url('./../../assets/homepage-img.jpg');
+   background-position: center;
+   background-repeat: no-repeat;
+    background-size: cover;
+   height: 570px;
+}
+.cards-container{
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    margin-top: 20px;
+}

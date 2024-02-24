@@ -1,22 +1,23 @@
 .navbar{
-    background-color:black;
-    color: white;
+    background-color:whitesmoke;
+    color: black !important;
     padding: 15px;
     display: flex;
     justify-content: space-between;
-    align-items: center;
+    align-items: center !important;
 }
 .navbar-brand{
     text-decoration: none;
-    font-size: 25px;
-    color: white;
+    font-size: 25px !important;
+    color: black !important;
     font-weight:700;
+    margin-left: 20px !important;
 }
 .navbar-link{
     text-decoration: none;
-    color:white;
-    font-size: 20px;
-    margin: 0 10px;
+    color:black !important;
+    font-size: 18px;
+    margin: 0 30px;
 }
 .navbar-link:hover{
     background-color:gray;
@@ -25,8 +26,12 @@
     border-radius: 5px;
     transition: 0.3s;
 }
-
-
+.textWhite{
+    color: white;
+}
+.navbar-links-container{
+    margin-right: 50px;
+}
 @media screen and (max-width: 750px){
     .navbar{
         display: flex;

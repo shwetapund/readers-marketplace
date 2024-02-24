@@ -66,8 +66,8 @@ function SignUp() {
 
         <h1 className='text-center title font-bold'>Books Gallary</h1>
         <div className='form-sub-container'>
-          <div>
-            <div>
+          <div className=''>
+            <div className=''>
               <label htmlFor='name' className="label-margin">Name : </label>
               <input
                 type='text'
@@ -95,10 +95,11 @@ function SignUp() {
               />
             </div>
 
+            
           </div>
 
           <div>
-          <div>
+          <div className='ms-5'>
               <label htmlFor='email' className="label-margin">Email : </label>
               <input
                 type='email'
@@ -112,7 +113,7 @@ function SignUp() {
               />
             </div>
             
-            <div>
+            <div className='ms-5'>
               <label htmlFor='password' className="label-margin">Password : </label>
               <input
                 type='text'
@@ -126,11 +127,11 @@ function SignUp() {
               />
             </div>
 
-          </div>
-          <div>
-            <label>Author</label>
+            <div>
+            <label className="label-margin">Author</label>
             <input 
             type='checkbox'
+            className='margin-checkbox'
             value={role}
             onClick={(e)=>{
               setRole(e.target.value)
@@ -138,6 +139,8 @@ function SignUp() {
             />
 
           </div>
+          </div>
+        
         </div>
         
         <button type="button" className='btn signup-btn'

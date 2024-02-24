@@ -1,13 +1,15 @@
-import React from 'react'
-import Navbar from '../../components/Navbar/Navbar'
+import React, {useState, useEffect} from 'react';
+import Navbar from '../../components/Navbar/Navbar';
+import './Home.css';
 
-function Home() {
+function Home() 
+{
+
   return (
     <>
     <Navbar/>
-      <div>Home</div>
+    <h1>Home</h1>
     </>
-  
   )
 }
 

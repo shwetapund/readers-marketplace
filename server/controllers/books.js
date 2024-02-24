@@ -1,7 +1,7 @@
 import { Book } from "./../model/books.js";
 
 const bookApi = async (req, res) => {
-  const { cover, title, description, genre, publishDate, price, tags } =
+  const { cover, title, description, genre, publishDate, price, tags, image } =
     req.body;
 
   const newbooks = new Book({
@@ -12,6 +12,7 @@ const bookApi = async (req, res) => {
     publishDate,
     price,
     tags,
+    image
   });
 
   const savedBooks = await newbooks.save();
@@ -25,7 +26,7 @@ const bookApi = async (req, res) => {
 
 const updateBooksApi = async (req, res) => {
   const { _id } = req.params;
-  const { cover, title, description, genre, publishDate, price, tags } =
+  const { cover, title, description, genre, publishDate, price, tags, image} =
     req.body;
 
     await Book.updateOne({ _id: _id },
@@ -38,6 +39,7 @@ const updateBooksApi = async (req, res) => {
         publishDate,
         price,
         tags,
+        image
       },
     }
   );
@@ -73,6 +75,7 @@ const searchBooks = async (req,res)=>{
             { description: { $regex: que, $options: 'i'} },
             { publishDate: { $regex: que, $options: 'i'} },
             { genre: { $regex: que, $options: 'i'} },
+          
         ]
     })
     res.json({
