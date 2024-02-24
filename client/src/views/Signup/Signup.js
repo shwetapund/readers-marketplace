@@ -128,10 +128,10 @@ function SignUp() {
             </div>
 
             <div>
-            <label className="label-margin">Author</label>
+            <label className="label-margin-checkbox">Author</label>
             <input 
             type='checkbox'
-            className='margin-checkbox'
+            className='margin-checkbox ms-2 '
             value={role}
             onClick={(e)=>{
               setRole(e.target.value)
@@ -143,7 +143,7 @@ function SignUp() {
         
         </div>
         
-        <button type="button" className='btn signup-btn'
+        <button type="button" className='button signup-btn'
               onClick={signup}>Sign up</button>
           
             <p className='text-center'>

@@ -13,9 +13,21 @@
     flex-wrap: wrap;
     margin-top: 20px;
 }
-.title{
-    color: rgb(252, 64, 124);
+.title-home{
+    color: rgb(249, 46, 110);
     position: relative;
-    top:110px;
+    top:160px;
     font-size: 80px !important;
+}
+.category{
+    margin-top:20px;
+    height: 200px;
+    width: 200px;
+    border: 5px double salmon;
+    border-radius: 50%;
+}
+.category-img-1{
+    height: 190px;
+    width: 190px;
+    border-radius: 50%;
 }

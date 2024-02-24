@@ -39,29 +39,31 @@ function Login() {
           </div>
           <div>
             <form className='login-container'>
-              <h1 className='text-center font-bold'>Books Gallary</h1>
+              <h1 className='text-center title font-bold mb-5'>Books Gallary</h1>
 
               <div className=''>
-                <label htmlFor='email' className='margin-1st-label label-margin'>Email : </label>
-
+                  <label htmlFor='email' className='margin-1st-label label-margin'>Email : </label>
+      
                 <input
                   type='email'
                   id='email'
-                  className='form-control'
+                  className='form-control-login margin'
                   placeholder='enter your Email'
                   value={email}
                   onChange={(e) => {
                     setEmail(e.target.value);
                   }}
                 />
+  
+               
               </div>
 
-              <div >
+              <div className=''>
                 <label htmlFor='password' className='label-margin'>Password : </label>
                 <input
                   type='password'
                   id='password'
-                  className='form-control'
+                  className='form-control-login'
                   placeholder='enter your Password'
                   value={password}
                   onChange={(e) => {
@@ -72,7 +74,7 @@ function Login() {
 
               <button
                 type='button'
-                className='btn login-btn'
+                className='button login-btn'
                 onClick={login}
               >Login</button>
 

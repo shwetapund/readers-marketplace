@@ -10,7 +10,7 @@ function Navbar() {
     <div className='navbar'>
           <div>
             <Link to="/" className='navbar-brand '>
-            <img src='' className='navbar-logo '/>Books Gallary</Link>
+            <img src='' className='navbar-logo '/>MPSC katta</Link>
           </div>
           <div className='navbar-links-container'>
             <Link to="/" className='navbar-link'>Home</Link>

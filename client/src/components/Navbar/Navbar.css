@@ -1,6 +1,6 @@
 .navbar{
     background-color:whitesmoke;
-    color: black !important;
+    
     padding: 15px;
     display: flex;
     justify-content: space-between;
@@ -9,13 +9,13 @@
 .navbar-brand{
     text-decoration: none;
     font-size: 25px !important;
-    color: black !important;
+    color: rgb(251, 4, 82) !important;
     font-weight:700;
     margin-left: 20px !important;
 }
 .navbar-link{
     text-decoration: none;
-    color:black !important;
+    color: rgb(251, 4, 82);
     font-size: 18px;
     margin: 0 30px;
 }
