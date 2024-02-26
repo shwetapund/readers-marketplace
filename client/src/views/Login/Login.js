@@ -39,7 +39,7 @@ function Login() {
           </div>
           <div>
             <form className='login-container'>
-              <h1 className='text-center title font-bold mb-5'>Books Gallary</h1>
+              <h1 className='text-center title font-bold mb-5'>MPSC katta</h1>
 
               <div className=''>
                   <label htmlFor='email' className='margin-1st-label label-margin'>Email : </label>

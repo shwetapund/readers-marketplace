@@ -64,7 +64,7 @@ function SignUp() {
 
       <form className='form-conatainer'>
 
-        <h1 className='text-center title font-bold'>Books Gallary</h1>
+        <h1 className='text-center title font-bold'>MPSC katta</h1>
         <div className='form-sub-container'>
           <div className=''>
             <div className=''>

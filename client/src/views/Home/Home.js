@@ -1,9 +1,7 @@
 import React, { useState, useEffect } from "react";
 import Navbar from "../../components/Navbar/Navbar";
 import "./Home.css";
-import homeImg from "./../../assets/home-img.jpg";
-import children from "./../../assets/childrens.jpg";
-import Footer from "../../components/Footer/Footer";
+import axios from 'axios';
 import Img1 from "./../../assets/Img1.jpg";
 import Img2 from "./../../assets/Img2.jpg";
 import Img3 from "./../../assets/Img3.jpg";
@@ -14,12 +12,18 @@ import category3 from "./../../assets/category-3.webp";
 import category2 from "./../../assets/category-2.png";
 import BooksCard from "../../components/BooksCard/BooksCard";
 
+
 function Home() {
   const [book, setBook] = useState([])
 
   const loadBooks = async ()=>{
-    const response = await axios.get('')
+    const response = await axios.get('/api/v1/books')
+    setBook(response?.data?.data)
+    console.log(response?.data?.data)
   }
+  useEffect(()=>{
+    loadBooks()
+  },[])
   
   return (
     <>
@@ -78,11 +82,8 @@ function Home() {
         </div>
       </div>
 
+   
 
-      <BooksCard 
-      cover={cover}
-      price={price}
-      title={title}/>
     </>
   );
 }

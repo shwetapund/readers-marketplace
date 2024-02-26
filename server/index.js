@@ -26,7 +26,7 @@ app.post('/api/v1/books',bookApi) //books added
 app.put('/api/v1/books/:_id',updateBooksApi) //books update
 app.get('/api/v1/books/:_id',getBooksApi) //bookd fetch
 app.get('/api/v1/booksSearch', searchBooks) //search books by title
-app.get('api/v1/books',booksFetchApi) //fetch All books
+app.get('/api/v1/books',booksFetchApi) //fetch All books
 
 if (process.env.NODE_ENV === 'production') {
     app.use(express.static(path.join(__dirname, '..', 'client', 'build')));
