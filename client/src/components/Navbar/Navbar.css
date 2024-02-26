@@ -1,6 +1,5 @@
 .navbar{
     background-color:whitesmoke;
-    
     padding: 15px;
     display: flex;
     justify-content: space-between;
@@ -57,7 +56,7 @@
 }
 .navbar-logo{
     height: 30px;
-    position:relative;
-    top:5px;
-    
+    position: relative;
+    bottom: 5px;
+    margin-right: 5px;
 }

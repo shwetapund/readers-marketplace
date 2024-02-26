@@ -3,6 +3,7 @@ import Navbar from '../../components/Navbar/Navbar';
 import './Home.css';
 import homeImg from "./../../assets/home-img.jpg";
 import children from "./../../assets/childrens.jpg";
+import Footer from '../../components/Footer/Footer';
 
 function Home() 
 {
@@ -32,7 +33,7 @@ function Home()
         <div className='category'></div>
       </div>
       
-
+      <Footer/>
     </>
   )
 }

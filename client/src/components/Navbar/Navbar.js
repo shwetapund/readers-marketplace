@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import './Navbar.css';
 import {Link} from 'react-router-dom';
-
+import logo from "./../../assets/reading-book.png";
 
 function Navbar() {
 
@@ -10,7 +10,9 @@ function Navbar() {
     <div className='navbar'>
           <div>
             <Link to="/" className='navbar-brand '>
-            <img src='' className='navbar-logo '/>MPSC katta</Link>
+            <img src={logo} className='navbar-logo'/>
+            {/* <img src={logo} className=''/> */}
+            MPSC katta</Link>
           </div>
           <div className='navbar-links-container'>
             <Link to="/" className='navbar-link'>Home</Link>
