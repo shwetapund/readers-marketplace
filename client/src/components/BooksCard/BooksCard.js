@@ -1,6 +1,6 @@
 import React from 'react'
 
-function BooksCard({cover, price, title, }) {
+function BooksCard({cover, price, title}) {
   return (
     <div class="card" style="width: 18rem;">
   <img src={cover} class="card-img-top" alt="..."/>

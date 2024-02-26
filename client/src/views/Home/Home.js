@@ -12,16 +12,19 @@ import category4 from "./../../assets/category-4.jpg";
 import category5 from "./../../assets/category-5.jpg";
 import category3 from "./../../assets/category-3.webp";
 import category2 from "./../../assets/category-2.png";
+import BooksCard from "../../components/BooksCard/BooksCard";
 
 function Home() {
+  const [book, setBook] = useState([])
+
+  const loadBooks = async ()=>{
+    const response = await axios.get('')
+  }
+  
   return (
     <>
       <Navbar />
-      {/* <div classNameName="homepage-img">
-        <h1 classNameName="text-center title-home">MPSC katta</h1>
-      </div> */}
-     
-     
+    
      <div id="carouselExampleIndicators" className="carousel slide ">
       <div className="carousel-indicators">
         <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" className="active" aria-current="true" aria-label="Slide 1"></button>
@@ -75,7 +78,11 @@ function Home() {
         </div>
       </div>
 
-      <Footer />
+
+      <BooksCard 
+      cover={cover}
+      price={price}
+      title={title}/>
     </>
   );
 }

@@ -91,4 +91,15 @@ catch(err){
     })
 }
 }
-export { bookApi, updateBooksApi, getBooksApi, searchBooks};
+
+const booksFetchApi = async (req,res)=>{
+  const booksFetch = await Book.find();
+  
+  res.json({
+    success:true,
+    data:booksFetch,
+    message:'successfully fetch all books'
+  })
+}
+
+export { bookApi, updateBooksApi, getBooksApi, searchBooks,booksFetchApi};

@@ -3,7 +3,7 @@ import mongoose from "mongoose";
 import dotenv from "dotenv";
 dotenv.config();
 import {signupApi, loginApi} from "./controllers/registration.js";
-import {bookApi, updateBooksApi, getBooksApi, searchBooks} from "./controllers/books.js";
+import {bookApi, updateBooksApi, getBooksApi, searchBooks, booksFetchApi} from "./controllers/books.js";
 import path from 'path';
 const __dirname = path.resolve();
 
@@ -26,6 +26,7 @@ app.post('/api/v1/books',bookApi) //books added
 app.put('/api/v1/books/:_id',updateBooksApi) //books update
 app.get('/api/v1/books/:_id',getBooksApi) //bookd fetch
 app.get('/api/v1/booksSearch', searchBooks) //search books by title
+app.get('api/v1/books',booksFetchApi) //fetch All books
 
 if (process.env.NODE_ENV === 'production') {
     app.use(express.static(path.join(__dirname, '..', 'client', 'build')));
