@@ -22,7 +22,8 @@ const UserSchema = new Schema({
     role: {
         type:Boolean, 
         default: false
-    }
+    },
+    
 
 },
 {

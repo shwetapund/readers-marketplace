@@ -5,6 +5,7 @@ dotenv.config();
 import {signupApi, loginApi} from "./controllers/registration.js";
 import {bookApi, updateBooksApi, getBooksApi, searchBooks, booksFetchApi} from "./controllers/books.js";
 import path from 'path';
+import { Regi } from "./model/Registration.js";
 const __dirname = path.resolve();
 
 const app = express();
@@ -20,6 +21,19 @@ const connectMongoDB = async() =>{
 }
 connectMongoDB();
 
+//middleware
+const authenticated = 
+app.get('/', async(req,res,next)=>{
+  const {SECRETKEY} = req.query;
+  const middlewareCheck = await Regi.find();
+  if(process.env.SECRET_KEY){
+    console.log('key is found')
+  }
+  else{
+   next;
+  }
+})
+
 app.post('/api/v1/signup',signupApi) //signup
 app.post('/api/v1/login',loginApi) //login
 app.post('/api/v1/books',bookApi) //books added 
@@ -27,6 +41,8 @@ app.put('/api/v1/books/:_id',updateBooksApi) //books update
 app.get('/api/v1/books/:_id',getBooksApi) //bookd fetch
 app.get('/api/v1/booksSearch', searchBooks) //search books by title
 app.get('/api/v1/books',booksFetchApi) //fetch All books
+
+
 
 if (process.env.NODE_ENV === 'production') {
     app.use(express.static(path.join(__dirname, '..', 'client', 'build')));

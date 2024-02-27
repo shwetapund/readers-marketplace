@@ -1,16 +1,17 @@
 import {Regi} from "./../model/Registration.js";
+import bcrypt from "bcrypt";
 
 const signupApi = async (req,res)=>{
     const {name, email, mobile, password,role} = req.body;
-
+    
     const signup = new Regi({
         role,
         name,
         email,
-        password,
+        password:Regi.passwordHash,
         mobile
     })
-   
+   //import bcrypt from "bcrypt";
     const savedUser = await signup.save();
     
     res.json({
@@ -20,10 +21,11 @@ const signupApi = async (req,res)=>{
     })
 }
 
-
 const loginApi = async (req,res)=>{
     const {email,password} = req.body;
 
+        const match = await bcrypt.compare(password, Regi.passwordHash);
+        //login hash password
     if(!email || !password){
         res.json({
             success:false,
